@@ -1,0 +1,55 @@
+
+.nav-custom-color {
+    background-color: #00E6E6 !important;
+}
+.navbar-brand.blog-web-app {
+    margin-left:2em;
+    font-size: 1.5rem;
+}
+.nav-ul {
+    margin-left: 50px;
+
+}
+.nav-ul-home {
+    font-size:larger ;
+}
+
+.container.body-home{
+    margin-top:60px;
+    background-color: #00E698;
+    border-radius: 20px;
+    margin-bottom: 100px;
+   
+}
+.blog-posts-container {
+    margin-top:60px;
+}
+.blog-posts-title {
+    display: flex;
+}
+
+.blog-posts-title-p {
+    padding-left: 15px;
+    padding-top:10px;
+}
+.footer-container {
+    margin-top:60px;
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Stick to the bottom */
+}
+
+.list-group-item{
+    background-color: transparent !important;
+}
+.list-group-item a {
+    background-color: inherit; /* Inherit the text color from parent */
+}
+
+.offset {
+    padding: 30px;
+}
+.inner-offset {
+    padding-left: 40px;
+    padding-right: 40px;
+}

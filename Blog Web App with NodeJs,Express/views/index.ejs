@@ -1,0 +1,34 @@
+<%- include('./partials/header.ejs') %>
+<div class="container body-home offset">
+    <div class="inner-offset">
+    <h1>Create Blog Post</h1>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" name="content" rows="8" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="blog-posts-container">
+        <div class="blog-posts-title">
+            <div><h2>Blog Posts</h2></div>
+            <div class="blog-posts-title-p"><p>(Click titles to see content)</p></div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <% for (let post_id in posts) { %>
+                <li class="list-group-item item">
+                    <a href="/posts/<%= post_id %>" class="text-dark"><%= posts[post_id]["title"] %></a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    </div>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>

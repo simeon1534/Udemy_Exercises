@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jokes App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+    
+
+
+  <% if (locals.error) {%>
+    <p><%= error %></p>
+  <% } %>
+  
+  <p class="user">
+    <%= setup %>
+  </p>
+
+  <div class="card">
+    <p class="offset-text">
+    
+      <%= delivery %>
+    </p>
+  </div>
+
+  
+</body>
+
+</html>
