@@ -62,23 +62,56 @@ app.put("/jokes/:id",  (req, res) => {
   const text = req.body.text;
   const type = req.body.type;
 
-  for (let i=0; i < jokes.length; i++) {
-      console.log(jokes[i]['id']);
-      if (jokes[i]['id'] === id) {
-          jokes[i]['jokeText'] = text;
-          jokes[i]['jokeType'] = type;
-          console.log(jokes[i]);
-      }
-  }
+  const found = jokes.find((joke) => joke['id'] === id);
+  const found_id = found['id']
   
-  res.json(jokes[id]);
+  jokes[found_id-1]['jokeText'] = text;
+  jokes[found_id-1]['jokeType'] = type;
+
+  res.json(jokes[found_id-1]);
 });
 
 //6. PATCH a joke
+app.patch("/jokes/:id",  (req, res) => {
+
+  const id = parseInt(req.params.id);
+  const text = req.body.text;
+  const type = req.body.type;
+
+  const found = jokes.find((joke) => joke['id'] === id);
+  const found_id = found['id']
+
+  if (text) {
+    jokes[found_id-1]['jokeText'] = text;
+  };
+  if (type) {
+    jokes[found_id-1]['jokeType'] = type;
+  };
+      
+  
+  res.json(jokes[found_id-1]);
+});
 
 //7. DELETE Specific joke
+app.delete("/jokes/:id",  (req, res) => {
+
+  const id = parseInt(req.params.id);
+ 
+  const found = jokes.find((joke) => joke['id'] === id);
+  const found_id = jokes.indexOf(found);
+
+  console.log(found);
+  console.log(found_id);
+  jokes.splice(found_id,1);
+  res.json(jokes);
+});
 
 //8. DELETE All jokes
+app.delete("/jokes/all/all",  (req, res) => {
+
+  jokes = [];
+  res.json('all jokes deleted');
+});
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
