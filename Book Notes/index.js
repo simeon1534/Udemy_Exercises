@@ -1,1 +1,0 @@
-// app taking photo based on isbn via public api
